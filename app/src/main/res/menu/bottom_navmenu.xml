@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Dashboard"
+        android:icon="@drawable/radix_icons_dashboard"/>
+
+    <item
+        android:id="@+id/course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Course"
+        android:icon="@drawable/ic_course"/>
+    <item
+        android:id="@+id/ranks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Ranks"
+        android:icon="@drawable/ic_ranks"/>
+</menu>
