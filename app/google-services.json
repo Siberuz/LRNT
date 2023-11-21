@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "362672152366",
+    "project_id": "lrnt-fd9dd",
+    "storage_bucket": "lrnt-fd9dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362672152366:android:f6ca6b45f3846542c4e4bf",
+        "android_client_info": {
+          "package_name": "com.example.lrnt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhTKH-3M3-z-KkLfnIvHWGZO7119HSV5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
