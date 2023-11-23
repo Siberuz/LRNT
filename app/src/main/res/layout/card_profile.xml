@@ -90,7 +90,7 @@
                         android:textColor="#386A86"
                         android:layout_marginRight="20dp"
                         android:fontFamily="@font/jakarta_sans_bold"
-                        android:background="00FFFFFF"/>
+                        android:background="#00FFFFFF"/>
 
                 </LinearLayout>
 
