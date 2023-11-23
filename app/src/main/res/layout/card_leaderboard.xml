@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#386A86"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    android:id="@+id/CardLeaderboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/LeaderboardLogo"
+            android:layout_width="55dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/c_programming_language"/>
+
+        <TextView
+            android:id="@+id/LeaderboardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Introduction To C"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/jakarta_sans_bold"
+            android:textColor="#E7D1B9"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
