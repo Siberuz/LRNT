@@ -46,7 +46,7 @@ public class Register extends AppCompatActivity {
                         regis(email.getText().toString(), password.getText().toString(), name.getText().toString());
                     }
                     else{
-                        Toast.makeText(getApplicationContext(),"Email tidak Valid!!!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Email Unvalid!!!",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
