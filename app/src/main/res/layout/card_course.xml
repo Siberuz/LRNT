@@ -53,6 +53,16 @@
             android:background="@drawable/carbon_next_outline"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"/>
+<<<<<<< Updated upstream
+=======
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:id="@+id/ButtonCourse"/>
+
+>>>>>>> Stashed changes
     </LinearLayout>
 
     <Button

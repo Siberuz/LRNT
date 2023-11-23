@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/dashboard"
+        android:id="@+id/dashboard_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Dashboard"
-        android:icon="@drawable/radix_icons_dashboard"/>
+        android:icon="@drawable/radix_icons_dashboard"
+/>
 
     <item
-        android:id="@+id/course"
+        android:id="@+id/course_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Course"
-        android:icon="@drawable/ic_course"/>
+        android:icon="@drawable/ic_course"
+       />
     <item
-        android:id="@+id/ranks"
+        android:id="@+id/ranks_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Ranks"
-        android:icon="@drawable/ic_ranks"/>
+        android:icon="@drawable/ic_ranks"
+       />
+
+    <item
+        android:id="@+id/profile_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"
+    />
+
 </menu>
