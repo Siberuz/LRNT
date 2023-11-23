@@ -67,6 +67,8 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void unused) {
                                             Toast.makeText(getApplicationContext(),"Account Has been Made",Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Register.this, Login.class);
+                                            startActivity(intent);
                                         }
                                     });
                                 }else{
