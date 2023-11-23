@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
+        android:fontFamily="@font/jakarta_sans"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="25dp"
@@ -29,22 +30,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:fontFamily="@font/jakarta_sans"
         android:textColor="@color/white"/>
     <EditText
         android:id="@+id/login_email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
+        android:fontFamily="@font/jakarta_sans"
         android:textColor="@color/white" />
     <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
         android:layout_marginBottom="40dp"/>
     <Button
@@ -55,9 +60,10 @@
         android:background="@drawable/button_second"
         android:backgroundTint="@color/second_color2"
         android:text="Login"
+        android:fontFamily="@font/jakarta_sans"
         android:textColor="@color/primary_color"
         android:textStyle="bold"
-        android:textSize="15dp"/>
+        android:textSize="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,19 +72,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have account yet?"
+            android:fontFamily="@font/jakarta_sans"
             android:textColor="@color/white"/>
         <Button
             android:id="@+id/loginPage_registerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register now"
+            android:fontFamily="@font/jakarta_sans"
             android:textColor="@color/white"
             android:textStyle="bold"
             style="@style/Base.Theme.LRNT"
             android:background="@drawable/button_second"
             android:backgroundTint="@color/primary_color"
             android:shadowColor="@color/primary_color"
-            android:outlineAmbientShadowColor="@color/primary_color"/>
+            android:outlineAmbientShadowColor="@color/primary_color"
+            android:layout_marginLeft="2dp"/>
 
     </LinearLayout>
 
