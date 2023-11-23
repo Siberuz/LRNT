@@ -36,7 +36,7 @@
                 android:text="Introduction To C"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:fontFamily="@font/jakarta_sans"
+                android:fontFamily="@font/jakarta_sans_bold"
                 android:textColor="@color/white"/>
 
             <TextView
