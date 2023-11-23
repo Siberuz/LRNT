@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="REGISTER"
+        android:fontFamily="@font/jakarta_sans_bold"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="25dp"
@@ -31,12 +32,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Full Name"
+        android:fontFamily="@font/jakarta_sans"
         android:textSize="15dp"
         android:textColor="@color/white"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/ET_name"
+        android:fontFamily="@font/jakarta_sans"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_shape"
         />
@@ -45,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:fontFamily="@font/jakarta_sans"
         android:textSize="15dp"
         android:textColor="@color/white"/>
 
@@ -52,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/ET_email"
+        android:fontFamily="@font/jakarta_sans"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_shape"
         />
@@ -59,12 +64,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
+        android:fontFamily="@font/jakarta_sans"
         android:textColor="@color/white"
         android:textSize="15dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/ET_password"
+        android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
         android:layout_marginBottom="40dp"
         />
@@ -75,8 +82,9 @@
         android:layout_height="wrap_content"
         style="@style/Base.Theme.LRNT"
         android:text="Register"
+        android:fontFamily="@font/jakarta_sans_bold"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textColor="@color/primary_color"
         android:backgroundTint="@color/second_color2"
         android:background="@drawable/button_second"
