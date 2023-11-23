@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_color"
     tools:context=".Register">
 
     <EditText
@@ -42,6 +43,8 @@
         app:layout_constraintTop_toBottomOf="@+id/ET_password"
         android:id="@+id/Btn_regis"
         android:text="Register"
+        android:textColor="@color/primary_color"
+        android:backgroundTint="@color/second_color2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
