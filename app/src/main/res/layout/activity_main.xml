@@ -17,7 +17,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:itemActiveIndicatorStyle="@color/second_color"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="-80dp"
+        android:layout_marginTop="-70dp"
         app:menu="@menu/bottom_navmenu" />
 
 </LinearLayout>
