@@ -39,7 +39,8 @@
         android:layout_height="40dp"
         android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +54,9 @@
         android:layout_height="40dp"
         android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="40dp"
+        android:paddingLeft="10dp"
+        android:inputType="textPassword"/>
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"

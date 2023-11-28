@@ -42,6 +42,8 @@
         android:fontFamily="@font/jakarta_sans"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_shape"
+        android:hint="e.g. Udin Saranghaeyo"
+        android:paddingLeft="10dp"
         />
     <TextView
         android:id="@+id/emailtxt_register"
@@ -59,7 +61,8 @@
         android:fontFamily="@font/jakarta_sans"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_shape"
-        />
+        android:hint="example@email.com"
+        android:paddingLeft="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,7 +77,8 @@
         android:fontFamily="@font/jakarta_sans"
         android:background="@drawable/edit_text_shape"
         android:layout_marginBottom="40dp"
-        />
+        android:paddingLeft="10dp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/Btn_regis"
