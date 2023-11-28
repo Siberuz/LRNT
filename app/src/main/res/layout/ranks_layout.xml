@@ -4,12 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Ranks"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ranks" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="65px"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose A Course To View Your Ranking"
+            android:textColor="@color/black"
+            android:textSize="50px"
+            android:fontFamily="@font/jakarta_sans_bold"
+            android:layout_marginBottom="30px"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ranks_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </LinearLayout>
