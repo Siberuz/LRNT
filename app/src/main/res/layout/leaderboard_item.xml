@@ -34,7 +34,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/img_profile"
                 android:layout_gravity="center"
-
                 android:layout_marginRight="10dp"
                 android:adjustViewBounds="true"
                 android:scaleX="1"
