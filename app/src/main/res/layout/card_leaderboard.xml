@@ -6,6 +6,7 @@
     app:cardBackgroundColor="#386A86"
     app:cardCornerRadius="20dp"
     app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
     android:id="@+id/CardLeaderboard">
 
     <LinearLayout
