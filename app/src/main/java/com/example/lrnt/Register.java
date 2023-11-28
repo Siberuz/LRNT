@@ -34,6 +34,18 @@ public class Register extends AppCompatActivity {
         EditText email = findViewById(R.id.ET_email);
         EditText password = findViewById(R.id.ET_password);
         Button btn = findViewById(R.id.Btn_regis);
+        Button btn_login = findViewById(R.id.registPage_loginButton);
+
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view == btn_login){
+                    Intent intent = new Intent(Register.this, Login.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
