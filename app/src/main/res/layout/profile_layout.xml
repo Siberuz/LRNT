@@ -5,35 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Profile"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/second_color2">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="#386A86"
-        android:layout_gravity="end">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="25dp"
-                android:background="@drawable/btn_close_x"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SAVE"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            android:background="@null"
-            android:layout_gravity="end"/>
-    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,162 +15,154 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_marginVertical="50dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile foto"
-            android:textStyle="bold"
-            android:textSize="25dp"/>
         <ImageView
             android:id="@+id/Foto_profile_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_profile"
             android:padding="80dp"/>
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-60dp"
-            android:layout_marginLeft="50dp"
-            android:padding="10dp"
-            android:scaleX="0.57"
-            android:background="@drawable/btn_upload_foto"/>
+            android:text="Samantha Lim"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="#191919"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text"
-            android:layout_marginHorizontal="20dp"
-            android:padding="5dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ProfileName_id"
+
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Name"
-                android:text="Nama User"
-                android:textSize="20dp"
-                android:backgroundTint="@color/black"
-                android:paddingHorizontal="10dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text"
-            android:layout_marginHorizontal="20dp"
-            android:padding="5dp">
-            <com.google.android.material.textfield.TextInputEditText
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:paddingHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Email"
+                android:textSize="12dp"
+                android:clickable="false"/>
+
+            <TextView
                 android:id="@+id/Email_profile_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Email"
+                android:layout_height="30dp"
+                android:gravity="start|center"
+                android:layout_marginHorizontal="20dp"
+                android:paddingHorizontal="10dp"
                 android:text="Email@example.com"
-                android:textSize="20dp"
-                android:backgroundTint="@color/black"
-                android:paddingHorizontal="10dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text"
-            android:layout_marginHorizontal="20dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
-            android:paddingHorizontal="5dp">
+                android:textSize="17dp"
+                android:background="@color/primary_color"
+                android:textColor="@color/white"
+                android:clickable="false"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Phone Number"
+                android:textSize="12dp"
+                android:paddingHorizontal="10dp"
+                android:clickable="false"/>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
                 android:id="@+id/noHP_profile_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black"
-                android:hint="Phone Number"
-                android:inputType="phone"
+                android:layout_height="30dp"
+                android:gravity="start|center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
                 android:paddingHorizontal="10dp"
                 android:text="082347584950"
-                android:textSize="20dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="17dp"
+                android:background="@color/primary_color"
+                android:textColor="@color/white"
+                android:clickable="false"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginHorizontal="20dp"
             android:paddingHorizontal="15dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date of Birth"/>
+                android:layout_marginHorizontal="15dp"
+                android:text="Date of Birth"
+                android:textSize="12dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+                <TextView
                     android:id="@+id/BirthDate_profile_DD_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#E7E7E7"
+                    android:background="@color/primary_color"
                     android:inputType="phone"
                     android:maxLength="2"
                     android:paddingHorizontal="10dp"
                     android:text="08"
-                    android:textSize="20dp" />
+                    android:textSize="17dp"
+                    android:clickable="false"
+                    android:textColor="@color/white"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/BirthDate_profile_MM_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:background="#E7E7E7"
+                    android:background="@color/primary_color"
                     android:inputType="phone"
                     android:maxLength="2"
                     android:paddingHorizontal="10dp"
                     android:text="02"
-                    android:textSize="20dp" />
+                    android:textSize="17dp"
+                    android:clickable="false"
+                    android:textColor="@color/white"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/BirthDate_profile_YYYY_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#E7E7E7"
-                    android:inputType="phone"
-                    android:maxLength="4"
+                    android:background="@color/primary_color"
                     android:paddingHorizontal="10dp"
                     android:text="2022"
-                    android:textSize="20dp" />
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:clickable="false"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="35dp"
-            android:layout_marginVertical="5dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="start">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
                 android:text="Gender"
-                android:gravity="center"/>
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginLeft="30dp">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="male"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="female"/>
+                android:textSize="12dp"
+                android:paddingHorizontal="10dp"
+                android:clickable="false"/>
 
-            </RadioGroup>
+            <TextView
+                android:id="@+id/Gender_profile_id"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="start|center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:paddingHorizontal="10dp"
+                android:text="Female"
+                android:textSize="17dp"
+                android:background="@color/primary_color"
+                android:textColor="@color/white"
+                android:clickable="false"/>
         </LinearLayout>
 
     </LinearLayout>
