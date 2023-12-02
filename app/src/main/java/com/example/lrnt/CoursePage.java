@@ -29,7 +29,7 @@ public class CoursePage extends AppCompatActivity {
         PDFView pdfV = findViewById(R.id.pdfVw);
         FirebaseStorage storage;
         storage = FirebaseStorage.getInstance();
-        sr = storage.getReference("GSLC OS.pdf");
+        sr = storage.getReference("course/"+objectCourse.getTitle()+".pdf");
         sr.getStream().addOnSuccessListener(new OnSuccessListener<StreamDownloadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(StreamDownloadTask.TaskSnapshot taskSnapshot) {
