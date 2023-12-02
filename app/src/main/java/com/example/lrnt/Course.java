@@ -1,6 +1,7 @@
 package com.example.lrnt;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,7 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-public class Course extends Fragment {
+public class Course extends Fragment implements SelectCourseListener{
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<ObjectCourse> courseal;
@@ -41,7 +42,7 @@ public class Course extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         courseal = new ArrayList<>();
-        ac = new AdapterCourse(getContext(), courseal);
+        ac = new AdapterCourse(getContext(), courseal, this);
         dataBind();
         rv = view.findViewById(R.id.rv);
         Toast.makeText(getContext(),"aaa",Toast.LENGTH_SHORT);
@@ -61,5 +62,12 @@ public class Course extends Fragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onItemClicked(ObjectCourse objectCourse) {
+        Intent intent = new Intent(getContext(), CoursePage.class);
+        intent.putExtra("courseObject", objectCourse);
+        startActivity(intent);
     }
 }

@@ -17,10 +17,12 @@ public class AdapterCourse extends RecyclerView.Adapter<AdapterCourse.ViewHolder
 
     Context context;
     ArrayList<ObjectCourse> courseAL;
+    SelectCourseListener listener;
 
-    public AdapterCourse(Context context, ArrayList<ObjectCourse> courseAL) {
+    public AdapterCourse(Context context, ArrayList<ObjectCourse> courseAL, SelectCourseListener listener) {
         this.context = context;
         this.courseAL = courseAL;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,6 +37,12 @@ public class AdapterCourse extends RecyclerView.Adapter<AdapterCourse.ViewHolder
         ObjectCourse oc = courseAL.get(position);
         holder.title.setText(oc.getTitle());
         holder.content.setText(oc.getDesc());
+        holder.cd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClicked(courseAL.get(position));
+            }
+        });
     }
 
     @Override
