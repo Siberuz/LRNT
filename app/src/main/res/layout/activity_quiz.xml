@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quiz">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="question"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/qst"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/qst"
+        >
+        <RadioButton
+            android:id="@+id/firstChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose 1"
+            />
+
+        <RadioButton
+            android:id="@+id/secondChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose 2"
+            />
+
+        <RadioButton
+            android:id="@+id/thirdChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose 3"
+            />
+
+        <RadioButton
+            android:id="@+id/fourthChoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose 4"
+            />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
