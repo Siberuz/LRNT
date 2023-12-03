@@ -46,6 +46,10 @@ public class Quiz extends AppCompatActivity {
         qst = new ArrayList<Question>();
         next = findViewById(R.id.next);
         int num = 1;
+        OperateSoal(1);
+    }
+
+    public void OperateSoal(int num){
         String nowq = "Question" + Integer.toString(num);
         Toast.makeText(getApplicationContext(),nowq,Toast.LENGTH_SHORT).show();
         DocumentReference dr = db.collection("course").document("1").collection("Quiz").document(nowq);
@@ -54,13 +58,11 @@ public class Quiz extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()){
                     DocumentSnapshot ds = task.getResult();
-                    question.setText(ds.get("question").toString());
+                    qst.add(new Question(ds.get("answer").toString(), ds.get("c1").toString(), ds.get("c2").toString(), ds.get("c3").toString(), ds.get("c4").toString(), ds.get("question").toString()));
+                    question.setText(qst.get(0).getAnswer());
 
                 }
             }
         });
-
-
-
     }
 }
