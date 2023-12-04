@@ -20,18 +20,20 @@
         android:visibility="gone"
         android:id="@+id/max"
         />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Question :"
+        android:fontFamily="@font/jakarta_sans_bold"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:text="question"
         android:layout_marginBottom="50dp"
-        android:id="@+id/qst"
-        />
+        android:id="@+id/qst" />
 
     <RadioGroup
         android:layout_width="match_parent"
