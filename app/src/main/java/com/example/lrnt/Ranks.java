@@ -63,6 +63,7 @@ public class Ranks extends Fragment implements SelectRankListener {
     @Override
     public void onItemClicked(Ranks_Item ranks_item) {
         Intent intent = new Intent(getContext(), LeaderboardCourse.class);
+        intent.putExtra("title", ranks_item.getTitle());
         startActivity(intent);
     }
 }

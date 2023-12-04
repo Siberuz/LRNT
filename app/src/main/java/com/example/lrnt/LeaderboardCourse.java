@@ -25,17 +25,18 @@ public class LeaderboardCourse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard_course);
+        String title = getIntent().getStringExtra("title");
         ls = new ArrayList<>();
         adapterLeaderboardCourse = new AdapterLeaderboardCourse(LeaderboardCourse.this, ls);
-        databind();
+        databind(title);
         rv = findViewById(R.id.Leaderboard_id);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapterLeaderboardCourse);
     }
 
-    public void databind(){
+    public void databind(String title){
         ArrayList<Leaderboard_Score> lsi = new ArrayList<>();
-        db.collection("course").document("1").collection("rank")
+        db.collection("course").document(title).collection("rank")
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
