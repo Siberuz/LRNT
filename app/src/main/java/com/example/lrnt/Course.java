@@ -45,7 +45,6 @@ public class Course extends Fragment implements SelectCourseListener{
         ac = new AdapterCourse(getContext(), courseal, this);
         dataBind();
         rv = view.findViewById(R.id.rv);
-        Toast.makeText(getContext(),"aaa",Toast.LENGTH_SHORT);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(ac);
     }

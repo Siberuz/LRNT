@@ -1,5 +1,6 @@
 package com.example.lrnt;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +13,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ranks extends Fragment {
+public class Ranks extends Fragment implements SelectRankListener {
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     RecyclerView ranksRecycler;
     List<Ranks_Item> item;
+    Ranks_Adapter ranksAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,18 +37,32 @@ public class Ranks extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        dataInitialize();
-
+        item = new ArrayList<>();
+        dataBind();
         ranksRecycler = view.findViewById(R.id.ranks_recycler);
         ranksRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        Ranks_Adapter ranksAdapter = (new Ranks_Adapter(getContext(),item));
+        ranksAdapter = new Ranks_Adapter(getContext(),item, this);
         ranksRecycler.setAdapter(ranksAdapter);
 
     }
 
-    private void dataInitialize() {
-        item = new ArrayList<Ranks_Item>();
-        item.add(new Ranks_Item("Introduction to LRNT.", R.drawable.lrnt_logo));
-        item.add(new Ranks_Item("Introduction to Test", R.drawable.carbon_next_outline));
+    public void dataBind(){
+        db.collection("course").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document : task.getResult()){
+                        item.add(new Ranks_Item(document.get("title").toString()));
+                        ranksAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onItemClicked(Ranks_Item ranks_item) {
+        Intent intent = new Intent(getContext(), LeaderboardCourse.class);
+        startActivity(intent);
     }
 }
