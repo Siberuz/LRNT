@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".Quiz">
+    android:padding="15dp"
+    tools:context=".Quiz"
+    android:background="@color/primary_color">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,13 +22,38 @@
         android:visibility="gone"
         android:id="@+id/max"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/courseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NamaCourse"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jakarta_sans_bold"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Quiz"
+            android:textColor="@color/second_color2"
+            android:fontFamily="@font/jakarta_sans_bold"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Question :"
         android:fontFamily="@font/jakarta_sans_bold"
         android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:layout_gravity="start"
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,18 +62,24 @@
         android:textSize="18dp"
         android:fontFamily="@font/jakarta_sans"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:id="@+id/qst" />
+
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/qst">
         <RadioButton
             android:id="@+id/firstChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="choose 1"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/jakarta_sans"
+            android:layout_marginBottom="10dp"
             />
 
         <RadioButton
@@ -55,6 +87,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="choose 2"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jakarta_sans"
+            android:buttonTint="@color/white"
+            android:layout_marginBottom="10dp"
             />
 
         <RadioButton
@@ -62,6 +98,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="choose 3"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jakarta_sans"
+            android:buttonTint="@color/white"
+            android:layout_marginBottom="10dp"
             />
 
         <RadioButton
@@ -69,6 +109,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="choose 4"
+            android:textColor="@color/white"
+            android:fontFamily="@font/jakarta_sans"
+            android:buttonTint="@color/white"
+            android:layout_marginBottom="10dp"
             />
 
     </RadioGroup>
@@ -79,9 +123,10 @@
         android:layout_height="wrap_content"
         android:text="Next"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/primary_color"
         style="@style/Base.Theme.LRNT"
         android:background="@drawable/button_second"
-        android:backgroundTint="@color/primary_color"
+        android:backgroundTint="@color/second_color2"
+        android:layout_gravity="end"
         />
 </LinearLayout>

@@ -37,6 +37,7 @@ public class Quiz extends AppCompatActivity {
     int total;
     ObjectCourse objectCourse;
     TextView max;
+    TextView courseNameTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class Quiz extends AppCompatActivity {
         question = findViewById(R.id.qst);
         qst = new ArrayList<Question>();
         next = findViewById(R.id.next);
+        courseNameTV = findViewById(R.id.courseName);
         OperateSoal(1, 0);
     }
 
