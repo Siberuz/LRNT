@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".Quiz">
 
     <TextView
@@ -31,8 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="question"
-        android:layout_marginBottom="50dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut purus sit amet leo imperdiet mollis. Praesent consectetur efficitur metus, a euismod erat."
+        android:textSize="18dp"
+        android:fontFamily="@font/jakarta_sans"
+        android:textStyle="bold"
         android:id="@+id/qst" />
 
     <RadioGroup
@@ -74,6 +77,11 @@
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="next"
+        android:text="Next"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        style="@style/Base.Theme.LRNT"
+        android:background="@drawable/button_second"
+        android:backgroundTint="@color/primary_color"
         />
 </LinearLayout>

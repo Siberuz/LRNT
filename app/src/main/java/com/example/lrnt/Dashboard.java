@@ -47,7 +47,7 @@ public class Dashboard extends Fragment {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                    if(documentSnapshot.exists()){
-                       String nama = documentSnapshot.getString("nama");
+                       String nama = documentSnapshot.getString("name");
                        userName_tv.setText(nama);
                    } else {
                        Toast.makeText(getActivity(), "dokumen pengguna tidak di temukan", Toast.LENGTH_SHORT).show();
