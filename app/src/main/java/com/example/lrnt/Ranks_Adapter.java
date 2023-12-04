@@ -2,6 +2,7 @@ package com.example.lrnt;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -13,10 +14,12 @@ public class Ranks_Adapter extends RecyclerView.Adapter<Ranks_Holder>{
 
     Context context;
     List<Ranks_Item> items;
+    SelectRankListener listener;
 
-    public Ranks_Adapter(Context context, List<Ranks_Item> items) {
+    public Ranks_Adapter(Context context, List<Ranks_Item> items, SelectRankListener listener) {
         this.context = context;
         this.items = items;
+        this.listener = listener;
     }
 
     @NonNull
@@ -27,8 +30,14 @@ public class Ranks_Adapter extends RecyclerView.Adapter<Ranks_Holder>{
 
     @Override
     public void onBindViewHolder(@NonNull Ranks_Holder holder, int position) {
-        holder.ranksText.setText(items.get(position).getTitle());
-        holder.ranksLogo.setImageResource(items.get(position).getImage());
+        Ranks_Item item = items.get(position);
+        holder.ranksText.setText(item.getTitle());
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClicked(items.get(position));
+            }
+        });
     }
 
     @Override

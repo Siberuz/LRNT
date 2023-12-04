@@ -16,6 +16,9 @@
         android:theme="@style/Theme.LRNT"
         tools:targetApi="31">
         <activity
+            android:name=".LeaderboardCourse"
+            android:exported="false" />
+        <activity
             android:name=".Quiz"
             android:exported="false" />
         <activity

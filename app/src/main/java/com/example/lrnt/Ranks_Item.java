@@ -4,9 +4,8 @@ public class Ranks_Item {
     String title;
     int image;
 
-    public Ranks_Item(String title, int image) {
+    public Ranks_Item(String title) {
         this.title = title;
-        this.image = image;
     }
 
     public String getTitle() {
