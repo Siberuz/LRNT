@@ -16,10 +16,112 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"/>
 
-    <include
-        android:id="@+id/card_profile_dashboard"
-        layout="@layout/card_profile"
-        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#386A86"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Average Score"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/jakarta_sans_bold"
+                    android:textColor="#E7D1B9"/>
+
+                <TextView
+                    android:id="@+id/ProfileScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="76.7 pts"
+                    android:textSize="40dp"
+                    android:layout_marginTop="-15dp"
+                    android:fontFamily="@font/jakarta_sans_bold"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Profile"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/jakarta_sans_bold"
+                    android:textColor="#E7D1B9"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ProfilePicture"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/ic_launcher_background"
+                            android:foreground="@mipmap/ic_launcher"
+                            android:layout_margin="10dp"/>
+
+                        <TextView
+                            android:id="@+id/ProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Samantha Lim"
+                            android:fontFamily="@font/jakarta_sans"
+                            android:gravity="center"
+                            android:textColor="@color/black"/>
+
+                        <Button
+                            android:id="@+id/ProfileButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Edit Profile"
+                            android:textAlignment="textEnd"
+                            android:textColor="#386A86"
+                            android:layout_marginRight="20dp"
+                            android:fontFamily="@font/jakarta_sans_bold"
+                            android:background="#00FFFFFF"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
