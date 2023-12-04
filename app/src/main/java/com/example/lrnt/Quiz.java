@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -33,6 +34,7 @@ public class Quiz extends AppCompatActivity {
     RadioButton third, fourth;
     Button next;
     ArrayList<Question> qst;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     int total;
     ObjectCourse objectCourse;
@@ -62,7 +64,7 @@ public class Quiz extends AppCompatActivity {
 
     public void OperateSoal(int numb, int tcount){
         String nowq = "Question" + Integer.toString(numb);
-        DocumentReference dr = db.collection("course").document("1").collection("Quiz").document(nowq);
+        DocumentReference dr = db.collection("course").document(objectCourse.getTitle()).collection("Quiz").document(nowq);
         dr.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -111,7 +113,7 @@ public class Quiz extends AppCompatActivity {
                                 int total = (100/(num -1))*Tcount;
                                 Toast.makeText(getApplicationContext(),Integer.toString(total), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(Quiz.this, MainActivity.class);
-                                intent.putExtra("UID", "uuu");
+                                intent.putExtra("UID", mAuth.getCurrentUser());
                                 startActivity(intent);
                             }
                             else{
