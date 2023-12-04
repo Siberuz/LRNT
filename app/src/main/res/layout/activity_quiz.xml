@@ -25,7 +25,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:gravity="end">
         <TextView
             android:id="@+id/courseName"
@@ -45,88 +44,94 @@
             android:textStyle="bold"
             android:textSize="16dp"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Question :"
-        android:fontFamily="@font/jakarta_sans_bold"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_gravity="start"
-        android:textColor="@color/white"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut purus sit amet leo imperdiet mollis. Praesent consectetur efficitur metus, a euismod erat."
-        android:textSize="18dp"
-        android:fontFamily="@font/jakarta_sans"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:id="@+id/qst" />
-
-
-    <RadioGroup
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/qst">
-        <RadioButton
-            android:id="@+id/firstChoice"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="choose 1"
-            android:textColor="@color/white"
-            android:buttonTint="@color/white"
-            android:fontFamily="@font/jakarta_sans"
-            android:layout_marginBottom="10dp"
-            />
-
-        <RadioButton
-            android:id="@+id/secondChoice"
+            android:text="Question :"
+            android:fontFamily="@font/jakarta_sans_bold"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_gravity="start"
+            android:textColor="@color/white"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="choose 2"
-            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut purus sit amet leo imperdiet mollis. Praesent consectetur efficitur metus, a euismod erat."
+            android:textSize="18dp"
             android:fontFamily="@font/jakarta_sans"
-            android:buttonTint="@color/white"
-            android:layout_marginBottom="10dp"
-            />
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/qst" />
 
-        <RadioButton
-            android:id="@+id/thirdChoice"
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/qst">
+            <RadioButton
+                android:id="@+id/firstChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="choose 1"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/jakarta_sans"
+                android:layout_marginBottom="10dp"
+                />
+
+            <RadioButton
+                android:id="@+id/secondChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="choose 2"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jakarta_sans"
+                android:buttonTint="@color/white"
+                android:layout_marginBottom="10dp"
+                />
+
+            <RadioButton
+                android:id="@+id/thirdChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="choose 3"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jakarta_sans"
+                android:buttonTint="@color/white"
+                android:layout_marginBottom="10dp"
+                />
+
+            <RadioButton
+                android:id="@+id/fourthChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="choose 4"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jakarta_sans"
+                android:buttonTint="@color/white"
+                android:layout_marginBottom="10dp"
+                />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="choose 3"
-            android:textColor="@color/white"
-            android:fontFamily="@font/jakarta_sans"
-            android:buttonTint="@color/white"
-            android:layout_marginBottom="10dp"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textColor="@color/primary_color"
+            style="@style/Base.Theme.LRNT"
+            android:background="@drawable/button_second"
+            android:backgroundTint="@color/second_color2"
+            android:layout_gravity="end"
             />
-
-        <RadioButton
-            android:id="@+id/fourthChoice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="choose 4"
-            android:textColor="@color/white"
-            android:fontFamily="@font/jakarta_sans"
-            android:buttonTint="@color/white"
-            android:layout_marginBottom="10dp"
-            />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:textStyle="bold"
-        android:textColor="@color/primary_color"
-        style="@style/Base.Theme.LRNT"
-        android:background="@drawable/button_second"
-        android:backgroundTint="@color/second_color2"
-        android:layout_gravity="end"
-        />
+    </LinearLayout>
 </LinearLayout>
