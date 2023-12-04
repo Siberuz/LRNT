@@ -54,6 +54,9 @@ public class Quiz extends AppCompatActivity {
         qst = new ArrayList<Question>();
         next = findViewById(R.id.next);
         courseNameTV = findViewById(R.id.courseName);
+
+        courseNameTV.setText(objectCourse.getTitle());
+
         OperateSoal(1, 0);
     }
 
