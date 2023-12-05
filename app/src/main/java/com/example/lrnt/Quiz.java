@@ -13,8 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -25,6 +27,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Console;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Quiz extends AppCompatActivity {
     TextView question;
@@ -111,10 +115,31 @@ public class Quiz extends AppCompatActivity {
                             }
                             if(num > Integer.valueOf(ds.get("max").toString())){
                                 int total = (100/(num -1))*Tcount;
-                                Toast.makeText(getApplicationContext(),Integer.toString(total), Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Quiz.this, MainActivity.class);
-                                intent.putExtra("UID", mAuth.getCurrentUser());
-                                startActivity(intent);
+                                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                String uid = currentUser.getUid();
+                                DocumentReference useRef = db.collection("users").document(uid);
+                                useRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                        if(documentSnapshot.exists()){
+                                            DocumentReference documentReference = db.collection("course").document(objectCourse.getTitle()).collection("rank").document(documentSnapshot.get("name").toString());
+                                            Map<String, Object> user = new HashMap<>();
+                                            user.put("score", total);
+                                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+                                                    Toast.makeText(getApplicationContext(),Integer.toString(total), Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(Quiz.this, MainActivity.class);
+                                                    intent.putExtra("UID", mAuth.getCurrentUser());
+                                                    startActivity(intent);
+                                                }
+                                            });
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "dokumen pengguna tidak di temukan", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             }
                             else{
                                 OperateSoal(num,Tcount);
