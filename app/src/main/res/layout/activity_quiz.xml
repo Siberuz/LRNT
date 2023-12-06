@@ -64,6 +64,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut purus sit amet leo imperdiet mollis. Praesent consectetur efficitur metus, a euismod erat."
             android:textSize="18dp"
+            android:layout_gravity="start"
             android:fontFamily="@font/jakarta_sans"
             android:textStyle="bold"
             android:textColor="@color/white"
