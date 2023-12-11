@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class Dashboard extends Fragment {
     private TextView ProfScore;
     int r;
     int r1;
+    private Button lo;
     private ImageView pht1;
     private ImageView pht2;
     private TextView suggest;
@@ -70,6 +72,7 @@ public class Dashboard extends Fragment {
         ProfScore = v.findViewById(R.id.ProfileScore);
         pht1 = v.findViewById(R.id.SuggestionLogo);
         pht2 = v.findViewById(R.id.SuggestionLogo_2);
+        lo = v.findViewById(R.id.LogOut);
         c1 = v.findViewById(R.id.CardSuggestion_1);
         c2 = v.findViewById(R.id.CardSuggestion_2);
         suggest = v.findViewById(R.id.SuggestionTitle);
@@ -116,6 +119,16 @@ public class Dashboard extends Fragment {
                 });
             }
         COTD();
+
+        lo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            }
+        });
+
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

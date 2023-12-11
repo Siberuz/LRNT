@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        isLogIn();
         setContentView(R.layout.login_activity);
         emailET = findViewById(R.id.login_email);
         passwordET = findViewById(R.id.login_password);
@@ -33,6 +34,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
         loginButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
+    }
+
+    private void isLogIn() {
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            Toast.makeText(getApplicationContext(), "aa", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
     }
 
     @SuppressLint("SuspiciousIndentation")

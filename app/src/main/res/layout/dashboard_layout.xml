@@ -99,7 +99,7 @@
                             android:textColor="@color/black"/>
 
                         <Button
-                            android:id="@+id/ProfileButton"
+                            android:id="@+id/LogOut"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="LogOut"
