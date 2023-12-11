@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/LeaderboardLogo"
-            android:layout_width="55dp"
-            android:layout_height="60dp"
+            android:layout_width="85dp"
+            android:layout_height="90dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>

@@ -49,6 +49,7 @@ public class AdapterLeaderboardCourse extends RecyclerView.Adapter<AdapterLeader
         TextView rank;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             participant = itemView.findViewById(R.id.Participant_id);
             Score = itemView.findViewById(R.id.Point_id);
             rank = itemView.findViewById(R.id.Rank_participant_id);
