@@ -1,10 +1,12 @@
 package com.example.lrnt;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -42,10 +44,14 @@ public class Dashboard extends Fragment {
     StorageReference sr;
     StorageReference sr1;
     private TextView ProfScore;
+    int r;
+    int r1;
     private ImageView pht1;
     private ImageView pht2;
     private TextView suggest;
     private TextView suggest2;
+    private CardView c1;
+    private CardView c2;
     private static ArrayList<String> courseal;
     private static int counter = 0;
     private static int score = 0;
@@ -64,6 +70,8 @@ public class Dashboard extends Fragment {
         ProfScore = v.findViewById(R.id.ProfileScore);
         pht1 = v.findViewById(R.id.SuggestionLogo);
         pht2 = v.findViewById(R.id.SuggestionLogo_2);
+        c1 = v.findViewById(R.id.CardSuggestion_1);
+        c2 = v.findViewById(R.id.CardSuggestion_2);
         suggest = v.findViewById(R.id.SuggestionTitle);
         suggest2 = v.findViewById(R.id.SuggestionTitle_2);
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -108,6 +116,25 @@ public class Dashboard extends Fragment {
                 });
             }
         COTD();
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ObjectCourse oc = new ObjectCourse(courseal.get(r), "");
+                Intent intent = new Intent(getActivity(), CoursePage.class);
+                intent.putExtra("courseObject", oc);
+                startActivity(intent);
+            }
+        });
+
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ObjectCourse oc = new ObjectCourse(courseal.get(r1), "");
+                Intent intent = new Intent(getActivity(), CoursePage.class);
+                intent.putExtra("courseObject", oc);
+                startActivity(intent);
+            }
+        });
         return  v;
     }
 
@@ -120,10 +147,10 @@ public class Dashboard extends Fragment {
                         courseal.add(document.get("title").toString());
                     }
                     Random randm = new Random();
-                    int r = randm.nextInt(courseal.size());
+                    r = randm.nextInt(courseal.size());
                     String rndm = courseal.get(r);
                     suggest.setText(rndm);
-                    int r1 = randm.nextInt(courseal.size());
+                    r1 = randm.nextInt(courseal.size());
                     String rndm1 = courseal.get(r1);
                     suggest2.setText(rndm1);
                     sr = FirebaseStorage.getInstance().getReference("course/"+courseal.get(r)+".png");
@@ -154,6 +181,7 @@ public class Dashboard extends Fragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
                 }
             }
         });
