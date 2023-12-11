@@ -78,6 +78,10 @@ public class Register extends AppCompatActivity {
                                     documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
+                                            DocumentReference documentreference = db.collection("users").document(userID).collection("cleared").document("initialize");
+                                            Map<String, Object> user = new HashMap<>();
+                                            user.put("score", 0);
+                                            documentreference.set(user);
                                             Toast.makeText(getApplicationContext(),"Account Has been Made",Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Register.this, Login.class);
                                             startActivity(intent);

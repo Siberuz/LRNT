@@ -129,6 +129,8 @@ public class Quiz extends AppCompatActivity {
                                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
+                                                    DocumentReference dr = db.collection("users").document(mAuth.getCurrentUser().getUid()).collection("cleared").document(objectCourse.getTitle());
+                                                    dr.update("score", total);
                                                     Toast.makeText(getApplicationContext(),Integer.toString(total), Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(Quiz.this, MainActivity.class);
                                                     intent.putExtra("UID", mAuth.getCurrentUser());
