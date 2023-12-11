@@ -62,93 +62,147 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:orientation="horizontal"
-            android:background="#386A86">
+            android:background="#386A86"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="2.5dp"
+            android:layout_marginBottom="35dp">
 
             <ImageView
-                android:layout_marginLeft="25dp"
-                android:layout_width="65dp"
-                android:layout_height="55dp"
-                android:background="@drawable/email_icon"
-                android:layout_marginTop="2.5dp"
-                android:layout_marginBottom="2.5dp"/>
-
-            <TextView
-                android:id="@+id/Email_profile_id"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="Email@example.com"
-                android:fontFamily="@font/jakarta_sans"
-                android:layout_marginHorizontal="20dp"
-                android:textSize="22dp"
-                android:layout_marginTop="12dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/white">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="#386A86">
-
-            <ImageView
-                android:layout_marginLeft="39dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="-8dp"
                 android:layout_width="45dp"
-                android:layout_height="65dp"
-                android:background="@drawable/phone_icon"/>
+                android:layout_height="40dp"
+                android:background="@drawable/email_icon"
+                android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/Email_profile_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Email@example.com"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:textSize="22dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"/>
+                <EditText
+                    android:id="@+id/profile_email_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:visibility="gone"/>
 
-            <TextView
-                android:id="@+id/noHP_profile_id"
-                android:layout_width="match_parent"
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/edit_email_button"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginHorizontal="17dp"
-                android:fontFamily="@font/jakarta_sans"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
-                android:text="080989898989"
-                android:textSize="22dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/white"/>
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_edit_24"
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:id="@+id/edit_email_button_done"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_check_24"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/white">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:orientation="horizontal"
-            android:background="#386A86">
+            android:background="#386A86"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="2.5dp"
+            android:layout_marginBottom="35dp">
 
             <ImageView
-                android:layout_marginLeft="32dp"
-                android:layout_width="55dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_profile"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/username_profile_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:text="Samantha Lim"
+                    android:textSize="22dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"/>
+                <EditText
+                    android:id="@+id/profile_username_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:visibility="gone"/>
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/edit_username_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_edit_24"
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:id="@+id/edit_username_button_done"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_check_24"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+<!--        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#386A86"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="2.5dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="-3dp"
                 android:background="@drawable/birth_icon"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="10dp">
-
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
                 <TextView
                     android:id="@+id/BirthDate_profile_DD_id"
                     android:layout_width="wrap_content"
@@ -192,8 +246,14 @@
                     android:textSize="22dp"
                     android:textColor="@color/white"/>
             </LinearLayout>
-
-        </LinearLayout>
+            <ImageButton
+                android:id="@+id/edit_birthdate_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_edit_24"
+                android:layout_gravity="center"/>
+        </LinearLayout>-->
 
     </LinearLayout>
 

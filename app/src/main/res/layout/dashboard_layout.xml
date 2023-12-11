@@ -103,9 +103,9 @@
                             android:id="@+id/ProfileButton"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Edit Profile"
+                            android:text="LogOut"
                             android:textAlignment="textEnd"
-                            android:textColor="#386A86"
+                            android:textColor="#DD684B"
                             android:layout_marginRight="20dp"
                             android:fontFamily="@font/jakarta_sans_bold"
                             android:background="#00FFFFFF"/>
