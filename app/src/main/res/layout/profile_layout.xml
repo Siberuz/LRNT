@@ -5,41 +5,60 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Profile"
-    android:orientation="vertical"
-    android:layout_marginTop="125dp">
-
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginVertical="30dp">
-        
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#386A86"/>
+
+        <ImageView
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:background="@drawable/background_pp"
+            android:layout_marginTop="-85dp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="-177dp">
+
         <ImageView
             android:id="@+id/Foto_profile_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
             android:background="@drawable/img_profile"
-            android:padding="80dp"/>
-        
+            android:layout_marginLeft="13dp"/>
+
         <TextView
             android:id="@+id/profileName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:text="Samantha Lim"
+            android:layout_marginTop="45dp"
+            android:gravity="end"
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="24dp"
             android:fontFamily="@font/jakarta_sans_bold"
-            android:textColor="#191919"/>
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:layout_marginRight="5dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp">
+        android:layout_marginTop="25dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,8 +68,8 @@
 
             <ImageView
                 android:layout_marginLeft="25dp"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
+                android:layout_width="65dp"
+                android:layout_height="55dp"
                 android:background="@drawable/email_icon"
                 android:layout_marginTop="2.5dp"
                 android:layout_marginBottom="2.5dp"/>
@@ -61,16 +80,17 @@
                 android:layout_height="30dp"
                 android:text="Email@example.com"
                 android:fontFamily="@font/jakarta_sans"
-                android:gravity="start|center"
                 android:layout_marginHorizontal="20dp"
-                android:paddingHorizontal="10dp"
-                android:textSize="17dp"
+                android:textSize="22dp"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="35dp"
             android:background="@color/white">
         </LinearLayout>
 
@@ -81,29 +101,32 @@
             android:background="#386A86">
 
             <ImageView
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="39dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="25dp"
-                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="-8dp"
+                android:layout_width="45dp"
+                android:layout_height="65dp"
                 android:background="@drawable/phone_icon"/>
 
             <TextView
                 android:id="@+id/noHP_profile_id"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:gravity="start|center"
                 android:layout_marginHorizontal="17dp"
                 android:fontFamily="@font/jakarta_sans"
-                android:paddingHorizontal="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
                 android:text="080989898989"
-                android:textSize="17dp"
+                android:textSize="22dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="35dp"
             android:background="@color/white">
         </LinearLayout>
 
@@ -114,55 +137,62 @@
             android:background="#386A86">
 
             <ImageView
-                android:layout_marginLeft="27dp"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="32dp"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/birth_icon"/>
 
-            <TextView
-                android:id="@+id/BirthDate_profile_DD_id"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="28dp"
-                android:fontFamily="@font/jakarta_sans"
-                android:text="04"
-                android:textSize="17dp"
-                android:textColor="@color/white"/>
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jakarta_sans"
-                android:text="/"
-                android:textSize="17dp"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/BirthDate_profile_DD_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:text="04"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
 
-            <TextView
-                android:id="@+id/BirthDate_profile_MM_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jakarta_sans"
-                android:text="12"
-                android:textSize="17dp"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:text="/"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:textSize="17dp"
-                android:fontFamily="@font/jakarta_sans"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/BirthDate_profile_MM_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:text="12"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
 
-            <TextView
-                android:id="@+id/BirthDate_profile_YYYY_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/jakarta_sans"
-                android:text="2023"
-                android:textSize="17dp"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textSize="22dp"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/BirthDate_profile_YYYY_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:text="2023"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
