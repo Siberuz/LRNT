@@ -1,5 +1,7 @@
 package com.example.lrnt;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +25,12 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -31,7 +39,11 @@ public class Dashboard extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private TextView userName_tv;
+    StorageReference sr;
+    StorageReference sr1;
     private TextView ProfScore;
+    private ImageView pht1;
+    private ImageView pht2;
     private TextView suggest;
     private TextView suggest2;
     private static ArrayList<String> courseal;
@@ -50,6 +62,8 @@ public class Dashboard extends Fragment {
         courseal = new ArrayList<>();
         userName_tv = v.findViewById(R.id.ProfileName);
         ProfScore = v.findViewById(R.id.ProfileScore);
+        pht1 = v.findViewById(R.id.SuggestionLogo);
+        pht2 = v.findViewById(R.id.SuggestionLogo_2);
         suggest = v.findViewById(R.id.SuggestionTitle);
         suggest2 = v.findViewById(R.id.SuggestionTitle_2);
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -106,11 +120,40 @@ public class Dashboard extends Fragment {
                         courseal.add(document.get("title").toString());
                     }
                     Random randm = new Random();
-                    String rndm = courseal.get(randm.nextInt(courseal.size()));
+                    int r = randm.nextInt(courseal.size());
+                    String rndm = courseal.get(r);
                     suggest.setText(rndm);
-                    Random randm1 = new Random();
-                    String rndm1 = courseal.get(randm1.nextInt(courseal.size()));
+                    int r1 = randm.nextInt(courseal.size());
+                    String rndm1 = courseal.get(r1);
                     suggest2.setText(rndm1);
+                    sr = FirebaseStorage.getInstance().getReference("course/"+courseal.get(r)+".png");
+                    sr1 = FirebaseStorage.getInstance().getReference("course/"+courseal.get(r1)+".png");
+                    try {
+                        File local = File.createTempFile("tempfile",".jpg");
+                        sr.getFile(local).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                pht1.setImageBitmap(bitmap);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+
+                            }
+                        });
+
+                        sr1.getFile(local).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                pht2.setImageBitmap(bitmap);
+                            }
+                        });
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });

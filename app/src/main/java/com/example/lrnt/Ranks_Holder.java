@@ -15,7 +15,7 @@ public class Ranks_Holder extends RecyclerView.ViewHolder {
 
     public Ranks_Holder(@NonNull View itemView) {
         super(itemView);
-//        ranksLogo = itemView.findViewById(R.id.LeaderboardLogo);
+        ranksLogo = itemView.findViewById(R.id.LeaderboardLogo);
         ranksText = itemView.findViewById(R.id.LeaderboardTitle);
         card = itemView.findViewById(R.id.CardLeaderboard);
     }
