@@ -60,76 +60,62 @@
         android:orientation="vertical"
         android:layout_marginTop="25dp">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginBottom="35dp"
             android:background="#386A86"
+            android:orientation="horizontal"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="17.5dp"
-            android:layout_marginBottom="35dp">
+            android:paddingVertical="17.5dp">
 
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="40dp"
-                android:background="@drawable/email_icon"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:background="@drawable/email_icon" />
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/Email_profile_id"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:text="Email@example.com"
-                    android:fontFamily="@font/jakarta_sans"
-                    android:textSize="22dp"
                     android:ellipsize="end"
+                    android:fontFamily="@font/jakarta_sans"
                     android:maxLines="1"
-                    android:textColor="@color/white"/>
-                <EditText
-                    android:id="@+id/profile_email_et"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginBottom="10dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/edit_text_shape"
-                    android:fontFamily="@font/jakarta_sans"
-                    android:visibility="gone"/>
-                <EditText
-                    android:id="@+id/profile_password_et"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/edit_text_shape"
-                    android:fontFamily="@font/jakarta_sans"
-                    android:hint="Insert Password"
-                    android:inputType="textPassword"
-                    android:visibility="gone"/>
+                    android:text="Email@example.com"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
 
             </LinearLayout>
+
             <ImageButton
                 android:id="@+id/edit_email_button"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:background="@color/primary_color"
                 android:src="@drawable/baseline_edit_24"
-                android:layout_gravity="center"/>
+                android:visibility="gone" />
+
             <ImageButton
                 android:id="@+id/edit_email_button_done"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:background="@color/primary_color"
                 android:src="@drawable/baseline_check_24"
-                android:visibility="gone"
-                android:layout_gravity="center"/>
+                android:visibility="gone" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -187,6 +173,83 @@
                 android:src="@drawable/baseline_check_24"
                 android:visibility="gone"
                 android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:background="#386A86"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="17.5dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/baseline_key_24" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/password_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:maxLines="1"
+                    android:text="Your Password"
+                    android:textColor="@color/white"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/profile_oldPassword_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:hint="Old Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/profile_newPassword_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:hint="New Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/edit_password_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_edit_24"
+                 />
+
+            <ImageButton
+                android:id="@+id/edit_password_button_done"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@color/primary_color"
+                android:src="@drawable/baseline_check_24"
+                android:visibility="gone" />
         </LinearLayout>
 
 

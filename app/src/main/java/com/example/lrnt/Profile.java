@@ -29,14 +29,15 @@ public class Profile extends Fragment implements View.OnClickListener {
     private FirebaseFirestore db;
     private TextView tv_name;
     private TextView tv_email;
-    private EditText email_et;
-    private ImageButton edit_email;
-    private ImageButton edit_email_done;
-    private EditText password_confirmation;
+    private EditText new_password;
+    private ImageButton edit_password;
+    private ImageButton edit_password_done;
+    private EditText old_password;
     private TextView username_tv;
     private EditText username_et;
     private ImageButton edit_username;
     private ImageButton edit_username_done;
+    private TextView password_tv;
     private String uid;
     private FirebaseUser currentUser;
     private  DocumentReference useRef;
@@ -52,12 +53,14 @@ public class Profile extends Fragment implements View.OnClickListener {
 
         tv_name = v.findViewById(R.id.profileName);
         tv_email = v.findViewById(R.id.Email_profile_id);
-        edit_email = v.findViewById(R.id.edit_email_button);
-        email_et = v.findViewById(R.id.profile_email_et);
-        edit_email.setOnClickListener(this);
-        edit_email_done = v.findViewById(R.id.edit_email_button_done);
-        edit_email_done.setOnClickListener(this);
-        password_confirmation = v.findViewById(R.id.profile_password_et);
+        edit_password = v.findViewById(R.id.edit_password_button);
+        old_password = v.findViewById(R.id.profile_oldPassword_et);
+        new_password = v.findViewById(R.id.profile_newPassword_et);
+        edit_password = v.findViewById(R.id.edit_password_button);
+        edit_password.setOnClickListener(this);
+        edit_password_done = v.findViewById(R.id.edit_password_button_done);
+        edit_password_done.setOnClickListener(this);
+        password_tv = v.findViewById(R.id.password_tv);
 
         username_tv = v.findViewById(R.id.username_profile_id);
         username_et = v.findViewById(R.id.profile_username_et);
@@ -132,22 +135,19 @@ public class Profile extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v == edit_email){
-            tv_email.setVisibility(View.GONE);
-            email_et.setVisibility(View.VISIBLE);
-            password_confirmation.setVisibility(View.VISIBLE);
-            edit_email.setVisibility(View.GONE);
-            edit_email_done.setVisibility(View.VISIBLE);
-            email_et.setText(tv_email.getText().toString());
+        if(v == edit_password){
+            password_tv.setVisibility(View.GONE);
+            old_password.setVisibility(View.VISIBLE);
+            new_password.setVisibility(View.VISIBLE);
+            edit_password.setVisibility(View.GONE);
+            edit_password_done.setVisibility(View.VISIBLE);
         }
-        if(v == edit_email_done){
-            String newEmail = email_et.getText().toString();
-            tv_email.setText(newEmail);
-            tv_email.setVisibility(View.VISIBLE);
-            email_et.setVisibility(View.GONE);
-            password_confirmation.setVisibility(View.GONE);
-            edit_email.setVisibility(View.VISIBLE);
-            edit_email_done.setVisibility(View.GONE);
+        if(v == edit_password_done){
+            password_tv.setVisibility(View.VISIBLE);
+            old_password.setVisibility(View.GONE);
+            new_password.setVisibility(View.GONE);
+            edit_password.setVisibility(View.VISIBLE);
+            edit_password_done.setVisibility(View.GONE);
         }
         if(v == edit_username){
             username_tv.setVisibility(View.GONE);
