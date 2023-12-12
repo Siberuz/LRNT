@@ -164,16 +164,18 @@ public class Dashboard extends Fragment {
                         courseal.add(document.get("title").toString());
                     }
                     Random randm = new Random();
+                    Random randm1 = new Random();
                     r = randm.nextInt(courseal.size());
                     String rndm = courseal.get(r);
                     suggest.setText(rndm);
-                    r1 = randm.nextInt(courseal.size());
+                    r1 = randm1.nextInt(courseal.size());
                     String rndm1 = courseal.get(r1);
                     suggest2.setText(rndm1);
-                    sr = FirebaseStorage.getInstance().getReference("course/"+courseal.get(r)+".png");
-                    sr1 = FirebaseStorage.getInstance().getReference("course/"+courseal.get(r1)+".png");
+                    sr = FirebaseStorage.getInstance().getReference("course/"+rndm+".png");
+                    sr1 = FirebaseStorage.getInstance().getReference("course/"+rndm1+".png");
                     try {
-                        File local = File.createTempFile("tempfile",".jpg");
+                        File local = File.createTempFile("tempfile",".png");
+                        File local2 = File.createTempFile("tempfile",".png");
                         sr.getFile(local).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
@@ -187,10 +189,10 @@ public class Dashboard extends Fragment {
                             }
                         });
 
-                        sr1.getFile(local).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        sr1.getFile(local2).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
+                                Bitmap bitmap = BitmapFactory.decodeFile(local2.getAbsolutePath());
                                 pht2.setImageBitmap(bitmap);
                             }
                         });
