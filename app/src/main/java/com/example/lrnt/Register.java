@@ -83,7 +83,7 @@ public class Register extends AppCompatActivity {
                                             user.put("score", 0);
                                             documentreference.set(user);
                                             Toast.makeText(getApplicationContext(),"Account Has been Made",Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(Register.this, Login.class);
+                                            Intent intent = new Intent(Register.this, MainActivity.class);
                                             startActivity(intent);
                                         }
                                     });

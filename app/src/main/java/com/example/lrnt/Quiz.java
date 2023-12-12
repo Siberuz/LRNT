@@ -89,24 +89,26 @@ public class Quiz extends AppCompatActivity {
                             if(first.isChecked()){
                                 if(first.getText().equals(ans.getText())){
                                     Tcount = Tcount + 1;
+                                    first.setChecked(false);
                                 }
                                 num = num +1;
                             } else if (second.isChecked()) {
                                 if(second.getText().equals(ans.getText())){
                                     Tcount = Tcount + 1;
+                                    second.setChecked(false);
                                 }
                                 num = num +1;
                             } else if (third.isChecked()) {
                                 if(third.getText().equals(ans.getText())){
                                     Tcount = Tcount + 1;
+                                    third.setChecked(false);
                                 }
                                 num = num +1;
 
                             } else if (fourth.isChecked()) {
-                                Toast.makeText(getApplicationContext(),question.getText().toString(), Toast.LENGTH_SHORT);
                                 if(fourth.getText().equals(ans.getText())){
                                     Tcount = Tcount + 1;
-
+                                    fourth.setChecked(false);
                                 }
                                 num = num +1;
                             }

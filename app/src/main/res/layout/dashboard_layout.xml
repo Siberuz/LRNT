@@ -165,8 +165,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        />
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:id="@+id/SuggestionTitle"
@@ -207,8 +206,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        />
+                        android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:id="@+id/SuggestionTitle_2"

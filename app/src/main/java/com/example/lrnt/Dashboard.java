@@ -112,8 +112,12 @@ public class Dashboard extends Fragment {
                             total = total + score;
                             counter++;
                         }
-                        total = total/(counter-1);
-                        ProfScore.setText(Integer.toString(total));
+                        if(counter > 1){
+                            total = total/(counter-1);
+                            ProfScore.setText(Integer.toString(total));
+                        }else{
+                            ProfScore.setText("not yet scored");
+                            }
                         }
                  }
                 });
