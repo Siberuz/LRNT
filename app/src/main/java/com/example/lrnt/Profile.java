@@ -36,6 +36,10 @@ public class Profile extends Fragment implements View.OnClickListener {
     private EditText username_et;
     private ImageButton edit_username;
     private ImageButton edit_username_done;
+    private String uid;
+    private FirebaseUser currentUser;
+    private  DocumentReference useRef;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,12 +64,12 @@ public class Profile extends Fragment implements View.OnClickListener {
         edit_username_done = v.findViewById(R.id.edit_username_button_done);
         edit_username_done.setOnClickListener(this);
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+      currentUser = mAuth.getCurrentUser();
 
         if(currentUser != null){
-            String uid = currentUser.getUid();
+            uid = currentUser.getUid();
 
-            DocumentReference useRef = db.collection("users").document(uid);
+            useRef = db.collection("users").document(uid);
 
             useRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
@@ -76,6 +80,7 @@ public class Profile extends Fragment implements View.OnClickListener {
 
                         tv_name.setText(nama);
                         tv_email.setText(email);
+                        username_tv.setText(nama);
 
                     }else{
                         Toast.makeText(getActivity(), "dokumen tidak ada", Toast.LENGTH_SHORT).show();
@@ -90,6 +95,37 @@ public class Profile extends Fragment implements View.OnClickListener {
 
         }
         return v;
+    }
+
+    public void updateUsername(String newUsername){
+        uid = currentUser.getUid();
+
+        uid = currentUser.getUid();
+        useRef = db.collection("users").document(uid);
+        useRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    useRef.update("name", newUsername).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(getActivity(), "Username updated Successful", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getActivity(), "Failed to update username", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "data pengguna gagal di ambil", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -123,6 +159,7 @@ public class Profile extends Fragment implements View.OnClickListener {
             username_et.setVisibility(View.GONE);
             edit_username.setVisibility(View.VISIBLE);
             edit_username_done.setVisibility(View.GONE);
+            updateUsername(newUsername);
         }
     }
 }
