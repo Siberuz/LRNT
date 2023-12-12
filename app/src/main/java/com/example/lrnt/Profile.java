@@ -143,26 +143,34 @@ public class Profile extends Fragment implements View.OnClickListener {
     }
 
     public void updatePassword(String newPassword, String oldPassword){
+
+        if (newPassword.length() < 8) {
+            Toast.makeText(getActivity(), "New Password must be at least 8 characters long", Toast.LENGTH_SHORT).show();
+            return; 
+        }
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), oldPassword);
+
         user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
-               FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-               user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
-                   @Override
-                   public void onComplete(@NonNull Task<Void> task) {
-                       if (task.isSuccessful()){
-                           Toast.makeText(getActivity(), "Password Successfully Update", Toast.LENGTH_SHORT).show();
-                       }
-                       else {
-                           Toast.makeText(getActivity(), "Password Failed to Update", Toast.LENGTH_SHORT).show();
-                       }
-                   }
-               });
+            public void onComplete(@NonNull Task<Void> reauthenticationTask) {
+                if (reauthenticationTask.isSuccessful()) {
+                    user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> updateTask) {
+                            if (updateTask.isSuccessful()) {
+                                Toast.makeText(getActivity(), "Password Successfully Updated", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getActivity(), "Password Update Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(getActivity(), "Old Password Incorrect. Password Update Failed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
     }
     @Override
     public void onClick(View v) {

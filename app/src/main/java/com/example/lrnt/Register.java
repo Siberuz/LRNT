@@ -53,6 +53,9 @@ public class Register extends AppCompatActivity {
                 if(name.getText().toString() == "" || email.getText().toString() == "" || password.getText().toString() == ""){
                     Toast.makeText(Register.this, "Please Fill all Field!", Toast.LENGTH_SHORT).show();
                 }
+                else if ( password.getText().toString().length() < 8){
+                    Toast.makeText(Register.this, "Password must be at least 8 characters long", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     if(email.getText().toString().contains(".") && email.getText().toString().contains("@")){
                         regis(email.getText().toString(), password.getText().toString(), name.getText().toString());
