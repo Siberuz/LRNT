@@ -9,24 +9,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         app:cardBackgroundColor="#386A86"
         android:id="@+id/CardLeaderboard">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/LeaderboardLogo"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/c_programming_language"/>
+            android:layout_gravity="center">
 
             <TextView
                 android:id="@+id/LeaderboardTitle"
@@ -39,13 +30,14 @@
                 android:textColor="#E7D1B9"
                 android:layout_gravity="center"
                 android:layout_marginLeft="65dp"/>
+
             <Button
                 android:id="@+id/Btn_close_leaderboard"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/btn_close_x"/>
+                android:background="@drawable/btn_close_x" />
 
         </LinearLayout>
 

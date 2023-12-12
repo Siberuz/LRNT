@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,6 +24,8 @@ public class LeaderboardCourse extends AppCompatActivity {
     ArrayList<Leaderboard_Score> ls;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     AdapterLeaderboardCourse adapterLeaderboardCourse;
+    TextView leaderbaordTitle_tv;
+    Button closeBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +34,17 @@ public class LeaderboardCourse extends AppCompatActivity {
         ls = new ArrayList<>();
         adapterLeaderboardCourse = new AdapterLeaderboardCourse(LeaderboardCourse.this, ls);
         databind(title);
+        leaderbaordTitle_tv = findViewById(R.id.LeaderboardTitle);
         rv = findViewById(R.id.Leaderboard_id);
+        closeBtn = findViewById(R.id.Btn_close_leaderboard);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapterLeaderboardCourse);
+        leaderbaordTitle_tv.setText(title);
+        closeBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(LeaderboardCourse.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     public void databind(String title){
