@@ -186,7 +186,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/jakarta_sans"
                     android:maxLines="1"
-                    android:text="Your Password"
+                    android:text="Edit Password"
                     android:textColor="@color/white"
                     android:textSize="22dp" />
 

@@ -153,8 +153,8 @@
                 app:cardElevation="8dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="175dp"
+                    android:layout_height="220dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -169,13 +169,16 @@
 
                     <TextView
                         android:id="@+id/SuggestionTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
                         android:fontFamily="@font/jakarta_sans_bold"
+                        android:maxLines="2"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
                         android:paddingRight="10dp"
-                        android:paddingBottom="35dp"
+                        android:layout_marginBottom="-1dp"
+                        android:gravity="center"
                         android:text="Introduction To C"
                         android:textColor="#E7D1B9"
                         android:textSize="20dp"
@@ -194,8 +197,8 @@
                 app:cardElevation="8dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="175dp"
+                    android:layout_height="220dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -210,15 +213,18 @@
 
                     <TextView
                         android:id="@+id/SuggestionTitle_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:fontFamily="@font/jakarta_sans_bold"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
                         android:paddingRight="10dp"
-                        android:paddingBottom="35dp"
+                        android:layout_marginBottom="-1dp"
                         android:text="Introduction To C"
                         android:textColor="#E7D1B9"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:gravity="center"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
