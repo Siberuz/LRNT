@@ -166,7 +166,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="20dp"
-                        android:background="@drawable/c_programming_language" />
+                        />
 
                     <TextView
                         android:id="@+id/SuggestionTitle"
@@ -208,7 +208,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="20dp"
-                        android:background="@drawable/c_programming_language" />
+                        />
 
                     <TextView
                         android:id="@+id/SuggestionTitle_2"
