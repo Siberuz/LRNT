@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -139,6 +142,28 @@ public class Profile extends Fragment implements View.OnClickListener {
 
     }
 
+    public void updatePassword(String newPassword, String oldPassword){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), oldPassword);
+        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+               FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+               user.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+                   @Override
+                   public void onComplete(@NonNull Task<Void> task) {
+                       if (task.isSuccessful()){
+                           Toast.makeText(getActivity(), "Password Successfully Update", Toast.LENGTH_SHORT).show();
+                       }
+                       else {
+                           Toast.makeText(getActivity(), "Password Failed to Update", Toast.LENGTH_SHORT).show();
+                       }
+                   }
+               });
+            }
+        });
+
+    }
     @Override
     public void onClick(View v) {
         if(v == edit_password){
@@ -154,6 +179,9 @@ public class Profile extends Fragment implements View.OnClickListener {
             new_password.setVisibility(View.GONE);
             edit_password.setVisibility(View.VISIBLE);
             edit_password_done.setVisibility(View.GONE);
+            String newPassword = new_password.getText().toString();
+            String oldPassword = old_password.getText().toString();
+            updatePassword(newPassword, oldPassword);
         }
         if(v == edit_username){
             username_tv.setVisibility(View.GONE);
