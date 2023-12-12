@@ -14,29 +14,28 @@
         android:id="@+id/CardLeaderboard">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:paddingTop="27dp">
 
             <TextView
+                android:paddingLeft="10dp"
                 android:id="@+id/LeaderboardTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:text="Introduction To C"
                 android:textSize="22dp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:fontFamily="@font/jakarta_sans_bold"
-                android:textColor="#E7D1B9"
-                android:layout_gravity="center"
-                android:layout_marginLeft="65dp"/>
+                android:textColor="#E7D1B9"/>
 
             <Button
                 android:id="@+id/Btn_close_leaderboard"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="20dp"
                 android:background="@drawable/btn_close_x" />
 
         </LinearLayout>
