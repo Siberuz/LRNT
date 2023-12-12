@@ -32,6 +32,7 @@ public class Profile extends Fragment implements View.OnClickListener {
     private EditText email_et;
     private ImageButton edit_email;
     private ImageButton edit_email_done;
+    private EditText password_confirmation;
     private TextView username_tv;
     private EditText username_et;
     private ImageButton edit_username;
@@ -56,6 +57,7 @@ public class Profile extends Fragment implements View.OnClickListener {
         edit_email.setOnClickListener(this);
         edit_email_done = v.findViewById(R.id.edit_email_button_done);
         edit_email_done.setOnClickListener(this);
+        password_confirmation = v.findViewById(R.id.profile_password_et);
 
         username_tv = v.findViewById(R.id.username_profile_id);
         username_et = v.findViewById(R.id.profile_username_et);
@@ -133,6 +135,7 @@ public class Profile extends Fragment implements View.OnClickListener {
         if(v == edit_email){
             tv_email.setVisibility(View.GONE);
             email_et.setVisibility(View.VISIBLE);
+            password_confirmation.setVisibility(View.VISIBLE);
             edit_email.setVisibility(View.GONE);
             edit_email_done.setVisibility(View.VISIBLE);
             email_et.setText(tv_email.getText().toString());
@@ -142,6 +145,7 @@ public class Profile extends Fragment implements View.OnClickListener {
             tv_email.setText(newEmail);
             tv_email.setVisibility(View.VISIBLE);
             email_et.setVisibility(View.GONE);
+            password_confirmation.setVisibility(View.GONE);
             edit_email.setVisibility(View.VISIBLE);
             edit_email_done.setVisibility(View.GONE);
         }

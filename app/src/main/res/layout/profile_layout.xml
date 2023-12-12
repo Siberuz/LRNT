@@ -62,11 +62,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="#386A86"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="2.5dp"
+            android:paddingVertical="17.5dp"
             android:layout_marginBottom="35dp">
 
             <ImageView
@@ -95,9 +95,20 @@
                     android:id="@+id/profile_email_et"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
                     android:paddingLeft="10dp"
                     android:background="@drawable/edit_text_shape"
                     android:fontFamily="@font/jakarta_sans"
+                    android:visibility="gone"/>
+                <EditText
+                    android:id="@+id/profile_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edit_text_shape"
+                    android:fontFamily="@font/jakarta_sans"
+                    android:hint="Insert Password"
+                    android:inputType="textPassword"
                     android:visibility="gone"/>
 
             </LinearLayout>
