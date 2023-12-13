@@ -65,7 +65,7 @@ public class LeaderboardCourse extends AppCompatActivity {
                             for(int i = 0; i<lsi.size(); i++){
                                 tempscore = 0;
                                 for (j = i; j<lsi.size(); j++){
-                                    if (tempscore < lsi.get(j).getScore()) {
+                                    if (tempscore <= lsi.get(j).getScore()) {
                                         temp = j;
                                         tempO = lsi.get(j);
                                         tempscore = lsi.get(j).getScore();
